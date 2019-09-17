@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/write"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_attr_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:textSize="@dimen/sp14"
+        android:textColor="@color/txt_color4"
+        android:text="辣度"/>
+    <TextView
+        android:id="@+id/tv_attr_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/txt_color3"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp10"
+        android:text="不辣，中辣，特辣，重辣"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp07"
+        android:background="@color/color_dddddd"/>
+</LinearLayout>

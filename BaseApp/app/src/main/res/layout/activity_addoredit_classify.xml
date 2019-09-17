@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="分类名"
+        android:textSize="@dimen/sp12"
+        android:layout_margin="@dimen/dp15"
+        android:textColor="@color/color_999999"/>
+
+    <EditText
+        android:id="@+id/et_goods_name"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/dp15"
+        android:textSize="@dimen/sp14"
+        android:layout_height="40dp"
+        android:maxLength="20"
+        android:hint="请输入分类名称（20字以内）"
+        android:background="@color/write"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp25"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_add"
+            style="@style/buttonStyle"
+            android:background="@drawable/button_bg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp15"
+            android:onClick="@{page::onClick}"
+            android:layout_weight="5"
+            android:text="保存"/>
+        <Button
+            android:id="@+id/btn_delete"
+            style="@style/buttonStyle"
+            android:background="@drawable/button_bg_gary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:textColor="@color/color_666666"
+            android:layout_weight="3"
+            android:text="删除"/>
+    </LinearLayout>
+</LinearLayout>

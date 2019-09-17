@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp50">
+    <TextView
+        android:id="@+id/tv_dishes_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_centerVertical="true"
+        android:text="菜品名称"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp15"
+        />
+    <ImageView
+        android:id="@+id/img_gouxuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_gouxuan"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp15"
+        />
+    <View style="@style/common_line_horizontal_80"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

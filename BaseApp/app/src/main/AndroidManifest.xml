@@ -1,0 +1,115 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.andlei.baseapp">
+    <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许获取WIFI状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- android:allowBackup="false"  adb backup容许任何一个能够打开USB 调试开关的人从Android手机中复制应用数据到外设，一旦应用数据被备份之后，所有应用数据都可被用户读取 -->
+    <application
+        android:name="application.App"
+        android:allowBackup="true"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="ui.activity.login.loadingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--//登陆-->
+        <activity android:name="ui.activity.login.LoginActivity" android:launchMode="singleTop" android:screenOrientation="portrait"/>
+        <!--//排序-->
+        <activity android:name="ui.activity.store.SortActivity" android:screenOrientation="portrait"/>
+        <activity android:name="ui.activity.store.StoreSortActivity" android:screenOrientation="portrait"/>
+        <activity android:name="ui.activity.store.MindSortActivity" android:screenOrientation="portrait"/>
+        <!--//开关-->
+        <activity android:name="ui.activity.store.OnOffStoreActivity" android:screenOrientation="portrait"/>
+        <!--//调整-->
+        <activity android:name="ui.activity.store.TrimStoreActivity" android:screenOrientation="portrait"/>
+        <!--//增加店铺-->
+        <activity android:name="ui.activity.store.AddShopActivity" android:screenOrientation="portrait"/>
+        <!--//资质列表-->
+        <activity android:name="ui.activity.store.IntelligenceListActivity" android:screenOrientation="portrait"/>
+        <!--//资质添加-->
+        <activity android:name="ui.activity.store.AddIntelligenceActivity" android:screenOrientation="portrait"/>
+        <!--//主界面-->
+        <activity android:name="ui.MainActivity"  android:screenOrientation="portrait"/>
+        <!--//订单列表-->
+        <activity android:name="ui.activity.order.OrderListActivity" android:screenOrientation="portrait"/>
+        <!--//团购订单-->
+        <activity android:name="ui.activity.order.GroupBuyOrderActivity" android:screenOrientation="portrait"/>
+        <!--//配送设置-->
+        <activity android:name="ui.activity.rider.DistributionSettingActivity" android:screenOrientation="portrait"/>
+        <!--//广告管理-->
+        <activity android:name="ui.activity.store.PosterManagerActivity" android:screenOrientation="portrait"/>
+        <!--//超值抢购-->
+        <activity android:name="ui.activity.store.OvervalueSnapUpActivity" android:screenOrientation="portrait"/>
+        <!--//超值抢购列表-->
+        <activity android:name="ui.activity.store.PosterListActivity" android:screenOrientation="portrait"/>
+        <!--//添加菜品-->
+        <activity android:name="ui.activity.store.AddingDishesActivity" android:screenOrientation="portrait"/>
+        <!--//品牌推荐-->
+        <activity android:name="ui.activity.store.BrandsActivity" android:screenOrientation="portrait"/>
+        <!--//首页搜索关键词-->
+        <activity android:name="ui.activity.store.IndexSearchKeywordActivity" android:screenOrientation="portrait"/>
+        <!--//选择菜品-->
+        <activity android:name="ui.activity.store.SelectDishesActivity" android:screenOrientation="portrait"/>
+        <!--//店铺列表-->
+        <activity android:name="ui.activity.store.StoreListActivity" android:screenOrientation="portrait"/>
+        <!--//商品管理-->
+        <activity android:name="ui.activity.store.GoodsManagerActivity" android:screenOrientation="portrait"/>
+        <!--//全部商品-->
+        <activity android:name="ui.activity.store.GoodsEditActivity" android:screenOrientation="portrait"/>
+        <!--//编辑，新增商品-->
+        <activity android:name="ui.activity.store.EditDetailActivity" android:screenOrientation="portrait"/>
+        <!--//管理分类-->
+        <activity android:name="ui.activity.goods.ClassifyManagerActivity" android:screenOrientation="portrait"/>
+        <!--//编辑，新增分类-->
+        <activity android:name="ui.activity.goods.AddOrEditClassifyActivity" android:screenOrientation="portrait"/>
+        <!--//商品排序-->
+        <activity android:name="ui.activity.goods.GoodsSortActivity" android:screenOrientation="portrait"/>
+        <!--//添加属性-->
+        <activity android:name="ui.activity.goods.AttributesActivity" android:screenOrientation="portrait"/>
+        <!--//添加规格-->
+        <activity android:name="ui.activity.goods.MostSpecActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="me.iwf.photopicker.PhotoPickerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name="me.iwf.photopicker.PhotoPagerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+    </application>
+</manifest>

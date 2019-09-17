@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp10"
+    android:background="@color/write"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_spec_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp10"
+        android:textSize="@dimen/sp14"
+        android:textColor="@color/txt_color4"
+        android:text="配凯撒芥末酱 42.88 元"/>
+    <TextView
+        android:id="@+id/tv_spec_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/txt_color3"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp07"
+        android:background="@color/color_dddddd"/>
+</LinearLayout>

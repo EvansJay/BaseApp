@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+        android:id="@+id/recy_list_"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="42dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        />
+    <LinearLayout
+        android:id="@+id/layout_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <View style="@style/common_line_horizontal_80"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="添加分类"
+            android:drawablePadding="@dimen/dp10"
+            android:textColor="#00B89D"
+            android:textSize="@dimen/sp15"
+            android:drawableLeft="@mipmap/icon_add_classify"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

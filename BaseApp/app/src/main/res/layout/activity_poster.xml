@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="超值抢购"
+            android:layout_marginLeft="@dimen/dp15"
+            android:textSize="@dimen/sp15"
+            android:textColor="@color/color_333333"
+            />
+        <Button
+            android:id="@+id/btn_poster"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/layout_borde_green"
+            android:layout_marginRight="@dimen/dp15"
+            android:text="编辑"
+            android:textColor="#12D195"
+            android:textSize="@dimen/sp15"
+            />
+    </RelativeLayout>
+    <View style="@style/common_line_horizontal_80"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="品牌推荐"
+            android:layout_marginLeft="@dimen/dp15"
+            android:textSize="@dimen/sp15"
+            android:textColor="@color/color_333333"
+            />
+        <Button
+            android:id="@+id/btn_brands"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/layout_borde_green"
+            android:layout_marginRight="@dimen/dp15"
+            android:text="编辑"
+            android:textColor="#12D195"
+            android:textSize="@dimen/sp15"
+            />
+    </RelativeLayout>
+    <View style="@style/common_line_horizontal_80"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="首页搜索关键词"
+            android:layout_marginLeft="@dimen/dp15"
+            android:textSize="@dimen/sp15"
+            android:textColor="@color/color_333333"
+            />
+        <Button
+            android:id="@+id/btn_keyword"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/layout_borde_green"
+            android:layout_marginRight="@dimen/dp15"
+            android:text="编辑"
+            android:textColor="#12D195"
+            android:textSize="@dimen/sp15"
+            />
+    </RelativeLayout>
+    <View style="@style/common_line_horizontal_80"/>
+</LinearLayout>

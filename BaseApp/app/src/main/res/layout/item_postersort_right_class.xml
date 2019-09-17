@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/write"
+    android:id="@+id/rlayout_main"
+    android:paddingLeft="@dimen/dp10"
+    android:paddingRight="@dimen/dp10"
+    android:paddingTop="@dimen/dp10">
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="1"
+        android:visibility="gone"
+        android:textSize="15sp"
+        />
+    <ImageView
+        android:id="@+id/iv_goods_logo"
+        android:layout_width="60dp"
+        android:visibility="gone"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tv_goods_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_toRightOf="@+id/iv_goods_logo"
+        android:maxLines="3"
+        android:layout_marginRight="100dp"
+        android:paddingTop="@dimen/dp10"
+        android:paddingBottom="@dimen/dp10"
+        android:text="臻选和风培根"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Switch
+            android:id="@+id/switch_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp15" />
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp15"
+            android:padding="@dimen/dp10"
+            android:textColor="@color/txt_color5"
+            android:layout_alignParentRight="true"
+            android:text="删除"/>
+        <ImageView
+            android:id="@+id/iv_paixu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10"
+            android:src="@mipmap/icon_paixu2"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_goods_month_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/txt_color3"
+        android:layout_toRightOf="@+id/iv_goods_logo"
+        android:layout_below="@id/tv_goods_name"
+        android:layout_marginLeft="@dimen/dp10"
+        android:visibility="gone"
+        android:text="月售18份" />
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp18"
+        android:visibility="gone"
+        android:textColor="@color/color_FF4F54"
+        android:layout_toRightOf="@+id/iv_goods_logo"
+        android:layout_below="@id/tv_goods_month_num"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp8"
+        android:text="¥18"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@id/tv_money"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_height="0.7dp"
+        android:background="@color/color_dddddd"/>
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    android:background="@color/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        android:paddingLeft="@dimen/dp15"
+        android:text="店铺管理"
+        android:textColor="@color/color_333333"
+        android:textSize="17dp"
+
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcly_glist"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:paddingLeft="@dimen/dp15"
+        android:text="订单管理"
+        android:visibility="gone"
+        android:textColor="@color/color_333333"
+        android:textSize="17dp"
+        />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcly_glist_order"
+            android:layout_marginTop="@dimen/dp5"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="@dimen/dp15"
+            android:text="骑手管理"
+            android:textColor="@color/color_333333"
+            android:textSize="17dp"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcly_glist_ridermanager"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

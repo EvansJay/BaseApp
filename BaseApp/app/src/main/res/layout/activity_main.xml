@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ui.MainActivity">
+
+    <!---->
+    <RadioGroup
+        android:id="@+id/rd_group"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/write"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rd_menu_homepage"
+            style="@style/tab_menu_item"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_menu_0"
+            android:text="首 页"/>
+        <!--<RadioButton-->
+        <!--android:id="@+id/rd_menu_instion"-->
+        <!--style="@style/tab_menu_item"-->
+        <!--android:drawableTop="@drawable/tab_menu_0"-->
+        <!--android:text="问 答"/>-->
+
+        <RadioButton
+            android:id="@+id/rd_menu_store"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_1"
+            android:visibility="visible"
+            android:text="商 户"/>
+        <RadioButton
+            android:id="@+id/rd_menu_worksapce"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_2"
+            android:visibility="visible"
+            android:text="工作台"/>
+        <RadioButton
+            android:id="@+id/rd_menu_user"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_3"
+            android:text="我 的"/>
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/FrameLayout"
+        android:layout_above="@id/rd_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<include android:id="@+id/title" layout="@layout/layout_title"/>-->
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_left"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="#f0f0f0"
+                    android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/tv_clazz_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp14"
+                        android:textColor="@color/black"
+                        android:padding="@dimen/dp5"/>
+                    <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+                        android:id="@+id/recycler_view_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp07"
+                        android:background="@color/bg"/>
+
+                    <TextView
+                        android:id="@+id/tv_auto_sort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_bg_item"
+                        android:textColor="#00B89D"
+                        android:paddingTop="@dimen/dp15"
+                        android:paddingBottom="@dimen/dp15"
+                        android:gravity="center"
+                        android:text="一键按销量排序"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>

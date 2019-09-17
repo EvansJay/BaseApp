@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp40" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/write"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp15"
+            android:background="@drawable/shape_search_bg">
+
+            <widget.ClearEditText
+                android:id="@+id/edittext_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:drawableLeft="@mipmap/img_search"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:hint="请输入店铺名称搜索"
+                android:imeOptions="actionSearch"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColorHint="#999999"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/write">
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginTop="@dimen/sp15"
+                android:button="@drawable/check_cselect"
+                android:text="  全选" />
+
+            <TextView
+                android:id="@+id/tv_storenum"
+                android:layout_width="120dp"
+                android:layout_height="@dimen/dp30"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="@dimen/sp10"
+                android:text="已选择0家店"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp15" />
+
+            <Button
+                android:id="@+id/btn_setall"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:background="@drawable/bt_click"
+                android:text="批量删除" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dp10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="状态" />
+
+                <Spinner
+                    android:id="@+id/edit_peisongfei_all"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:background="@drawable/shape_search_fang_bg"
+                     />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:text="证件时间" />
+
+                <TextView
+                    android:id="@+id/edit_qisongfei_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:text="请选择时间"
+                    android:background="@drawable/shape_search_fang_bg"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_alignParentBottom="true"
+                style="@style/common_line_horizontal_80"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recy_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>

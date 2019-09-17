@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp10">
+
+    <ImageView
+        android:id="@+id/iv_goods_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/tv_goods_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_toRightOf="@+id/iv_goods_logo"
+        android:text="臻选和风培根披萨"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16" />
+
+    <TextView
+        android:id="@+id/tv_goods_month_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/txt_color3"
+        android:layout_toRightOf="@+id/iv_goods_logo"
+        android:layout_below="@id/tv_goods_name"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp8"
+        android:text="月售18份" />
+    <TextView
+        android:id="@+id/tv_goods_stock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/txt_color3"
+        android:layout_toRightOf="@+id/tv_goods_month_num"
+        android:layout_below="@id/tv_goods_name"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp8"
+        android:text="库存99份"/>
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp18"
+        android:textColor="@color/color_FF4F54"
+        android:layout_toRightOf="@+id/iv_goods_logo"
+        android:layout_below="@id/tv_goods_stock"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp8"
+        android:text="¥18"/>
+    <LinearLayout
+        android:id="@+id/ll_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_money"
+        android:gravity="right"
+        android:paddingRight="@dimen/dp10"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_edit"
+            style="@style/buttonStyle_small"
+            android:background="@drawable/button_bg_border"
+            android:text="编辑"/>
+        <Button
+            android:id="@+id/btn_up_down"
+            style="@style/buttonStyle_small"
+            android:background="@drawable/button_bg_border2"
+            android:layout_marginLeft="@dimen/dp10"
+            android:text="上架"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@id/ll_btn"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_height="0.7dp"
+        android:background="@color/color_dddddd"/>
+</RelativeLayout>
