@@ -5,29 +5,21 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-
 import com.andlei.baseapp.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import adapter.GoodsSortRightAdapter;
 import adapter.PosterSortRightAdapter;
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import bean.StoreBean;
 import netWork.NetUtils;
-import ui.activity.login.LoginActivity;
 import utils.GsonUtils;
-import utils.Logger;
-import utils.SPUtils;
 import widget.HiDialog;
 
 /**
@@ -35,7 +27,7 @@ import widget.HiDialog;
  * @author Andlei
  * @date 2019/9/9.
  */
-public class PosterListActivity extends BaseLayoutActivity {
+public class PosterListActivity extends activity.BaseLayoutActivity {
     private Button btn_sure;
     private SwipeMenuRecyclerView swipeMenuRecyclerView;
     private PosterSortRightAdapter mGoodsRightAdapter;

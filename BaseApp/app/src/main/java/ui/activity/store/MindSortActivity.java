@@ -11,7 +11,7 @@ import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.listener.CustomListener;
 import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.TimePickerView;
-import com.google.gson.Gson;
+
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,12 +21,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import bean.SortTypeBean;
 import netWork.NetUtils;
 import utils.GsonUtils;
-import utils.Logger;
 
 /**
  * 智能排序
@@ -34,7 +33,7 @@ import utils.Logger;
  * @author Andlei
  * @date 2019/8/26.
  */
-public class MindSortActivity extends BaseLayoutActivity {
+public class MindSortActivity extends activity.BaseLayoutActivity {
     private Button btn_bianji_auto, btn_bianji_auto_zheng, btn_bianji_auto_xiawu,btn_bianji_auto_yexiao_dinner, btn_bianji_auto_yexiao;
     private String School_id;
     private int p_type;
@@ -153,7 +152,7 @@ public class MindSortActivity extends BaseLayoutActivity {
         typeBeans.add(bean2);
         typeBeans.add(bean3);
         typeBeans.add(bean4);
-        map.put("time_list",new Gson().toJson(typeBeans));
+        map.put("time_list",GsonUtils.beanToJSONString(typeBeans));
         if(type == 1){
             map.put("parent_type",11);
         }else {
@@ -173,7 +172,7 @@ public class MindSortActivity extends BaseLayoutActivity {
         switch (view.getId()) {
             case R.id.btn_bianji_auto:
                 bundle.putInt("type", type+1);
-                Logger.i("type--->",type+"");
+                com.andlei.utils.Logger.i("type--->",type+"");
                 bundle.putString("title", "早餐");
                 bundle.putString("start_time", tv_start_time1.getText().toString());
                 bundle.putString("end_time", tv_end_time1.getText().toString());
@@ -181,7 +180,7 @@ public class MindSortActivity extends BaseLayoutActivity {
                 break;
             case R.id.btn_bianji_auto_zheng:
                 bundle.putInt("type", type+2);
-                Logger.i("type--->",type+"");
+                com.andlei.utils.Logger.i("type--->",type+"");
                 bundle.putString("title", "正餐");
                 bundle.putString("start_time", tv_start_time2.getText().toString());
                 bundle.putString("end_time", tv_end_time2.getText().toString());
@@ -189,7 +188,7 @@ public class MindSortActivity extends BaseLayoutActivity {
                 break;
             case R.id.btn_bianji_auto_xiawu:
                 bundle.putInt("type", type+3);
-                Logger.i("type--->",type+"");
+                com.andlei.utils.Logger.i("type--->",type+"");
                 bundle.putString("title", "下午茶");
                 bundle.putString("start_time", tv_start_time3.getText().toString());
                 bundle.putString("end_time", tv_end_time3.getText().toString());
@@ -197,7 +196,7 @@ public class MindSortActivity extends BaseLayoutActivity {
                 break;
             case R.id.btn_bianji_auto_yexiao_dinner:
                 bundle.putInt("type", type+3);
-                Logger.i("type--->",type+"");
+                com.andlei.utils.Logger.i("type--->",type+"");
                 bundle.putString("title", "晚餐");
                 bundle.putString("start_time", tv_start_time_dinner.getText().toString());
                 bundle.putString("end_time", tv_end_time_dinner.getText().toString());
@@ -205,7 +204,7 @@ public class MindSortActivity extends BaseLayoutActivity {
                 break;
             case R.id.btn_bianji_auto_yexiao:
                 bundle.putInt("type", type+4);
-                Logger.i("type--->",type+"");
+                com.andlei.utils.Logger.i("type--->",type+"");
                 bundle.putString("title", "夜宵");
                 bundle.putString("start_time", tv_start_time4.getText().toString());
                 bundle.putString("end_time", tv_end_time4.getText().toString());

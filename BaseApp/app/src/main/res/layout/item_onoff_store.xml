@@ -5,8 +5,8 @@
     android:layout_height="50dp">
     <ImageView
         android:id="@+id/img_select"
-        android:layout_width="@dimen/dp_40"
-        android:layout_height="@dimen/dp_40"
+        android:layout_width="@dimen/dp40"
+        android:layout_height="@dimen/dp40"
         android:scaleType="center"
         android:src="@mipmap/iconc_noselect"
         android:layout_centerVertical="true"

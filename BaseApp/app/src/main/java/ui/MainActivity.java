@@ -7,7 +7,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioGroup;
 import com.andlei.baseapp.R;
-import com.tencent.bugly.beta.Beta;
 
 import base.activity.BaseFragmentActivity;
 import netWork.NetUtils;
@@ -15,7 +14,7 @@ import ui.fragment.HomePageFragment;
 import ui.fragment.MineFragment;
 import ui.fragment.StoreFragment;
 import ui.fragment.WorkSpaceFragment;
-import utils.Logger;
+import utils.BuglyUtil;
 
 /**
  * @author Andlei
@@ -89,7 +88,8 @@ public class MainActivity extends BaseFragmentActivity {
 
     @Override
     protected void formatData() {
-        Beta.checkUpgrade(false,false);
+        BuglyUtil.checkUpgrade(false,false);
+        //       Beta.checkUpgrade(false,false);
 //        CrashReport.testJavaCrash();
 //        new Thread(new Runnable() {
 //            @Override

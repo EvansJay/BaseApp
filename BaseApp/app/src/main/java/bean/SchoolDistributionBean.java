@@ -4,6 +4,7 @@ import java.util.List;
 
 import base.BaseBean;
 
+
 /**
  * @author Andlei
  * @date 2019/8/28.

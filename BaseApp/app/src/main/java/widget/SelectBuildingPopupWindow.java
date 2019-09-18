@@ -21,7 +21,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import java.util.List;
 
 import adapter.SelectBuildingAdapter;
-import base.BaseBean;
+
 import bean.SchoolDistributionBean;
 
 

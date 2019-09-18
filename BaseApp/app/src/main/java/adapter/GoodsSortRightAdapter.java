@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.andlei.baseapp.R;
-import com.bumptech.glide.Glide;
+
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 
 

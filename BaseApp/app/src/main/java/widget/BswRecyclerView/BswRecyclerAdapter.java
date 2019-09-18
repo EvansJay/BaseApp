@@ -8,14 +8,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
 import com.andlei.baseapp.R;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import utils.Const;
-
 /**
  * RecyclerView适配器
  *
@@ -132,7 +127,7 @@ public class BswRecyclerAdapter<T> extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        if (showFooter && position == Const.judgeListNull(mData)) {
+        if (showFooter && position == com.andlei.utils.Const.judgeListNull(mData)) {
             return FOOTER_TYPE;
         }
         if (multiplexAdapterCallBack == null) {
@@ -208,9 +203,9 @@ public class BswRecyclerAdapter<T> extends RecyclerView.Adapter {
      * @param mData 替换的数据
      */
     private void replaceData(List<T> mData, int pageNumber, int pageSize) {
-        int dataSize = Const.judgeListNull(mData);
+        int dataSize = com.andlei.utils.Const.judgeListNull(mData);
         if (dataSize < pageNumber) {
-            int allDataSize = Const.judgeListNull(this.mData);
+            int allDataSize = com.andlei.utils.Const.judgeListNull(this.mData);
             for (int i = mData.size(); i < allDataSize - dataSize; i--) {
                 this.mData.remove(i);
             }
@@ -247,7 +242,7 @@ public class BswRecyclerAdapter<T> extends RecyclerView.Adapter {
      * @param isNotify 是否刷新布局
      */
     void clearData(boolean isNotify) {
-        if (Const.notEmpty(mData)) {
+        if (com.andlei.utils.Const.notEmpty(mData)) {
             mData.clear();
             if (isNotify) {
                 notifyDataSetChanged();
@@ -291,7 +286,7 @@ public class BswRecyclerAdapter<T> extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (position >= Const.judgeListNull(mData)) {
+        if (position >= com.andlei.utils.Const.judgeListNull(mData)) {
             return;
         }
         if (multiplexAdapterCallBack == null) {
@@ -304,7 +299,7 @@ public class BswRecyclerAdapter<T> extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        int mDataSize = Const.judgeListNull(mData);
+        int mDataSize = com.andlei.utils.Const.judgeListNull(mData);
         if (showFooter) {
             mDataSize++;
         }

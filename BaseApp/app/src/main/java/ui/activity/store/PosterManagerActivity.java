@@ -3,17 +3,14 @@ package ui.activity.store;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import com.andlei.baseapp.R;
-
-import base.activity.BaseLayoutActivity;
 
 /**
  * 广告管理
  * @author Andlei
  * @date 2019/9/9.
  */
-public class PosterManagerActivity extends BaseLayoutActivity {
+public class PosterManagerActivity extends activity.BaseLayoutActivity {
     private Button btn_poster,btn_brands,btn_keyword;
 
     @Override

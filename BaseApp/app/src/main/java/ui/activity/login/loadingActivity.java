@@ -7,13 +7,9 @@ import com.andlei.baseapp.R;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import netWork.NetUtils;
 import ui.MainActivity;
-import utils.SPUtils;
-import utils.TimerUtil;
 
 /**
  * loaing加载页
@@ -21,7 +17,7 @@ import utils.TimerUtil;
  * @author Andlei
  * @DATE 2019/1/17
  */
-public class loadingActivity extends BaseLayoutActivity {
+public class loadingActivity extends activity.BaseLayoutActivity {
     private Timer timer;
     private NetUtils netUtil;
     @Override
@@ -38,7 +34,7 @@ public class loadingActivity extends BaseLayoutActivity {
     protected void formatViews() {
         timer = new Timer();
        // if(!TextUtils.isEmpty(SPUtils.getInstance(loadingActivity.this).getString("token"))){
-            netUtil.get("changestoresort/get_time", null,BaseBean.class,null,false);
+            netUtil.get("changestoresort/get_time", null, BaseBean.class,null,false);
 //        }else {
 //            jumpTo(LoginActivity.class);
 //      }
@@ -91,14 +87,14 @@ public class loadingActivity extends BaseLayoutActivity {
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    if(!TextUtils.isEmpty(SPUtils.getInstance(loadingActivity.this).getString("time"))){
+                    if(!TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(loadingActivity.this).getString("time"))){
 
-                        if(TimerUtil.getDistanceTime(Long.parseLong(SPUtils.getInstance(loadingActivity.this).getString("time")),Long.parseLong(t.time))){
+                        if(com.andlei.utils.TimerUtil.getDistanceTime(Long.parseLong(com.andlei.utils.SPUtils.getInstance(loadingActivity.this).getString("time")),Long.parseLong(t.time))){
 
-                            SPUtils.getInstance(loadingActivity.this).put("time", "");
+                            com.andlei.utils.SPUtils.getInstance(loadingActivity.this).put("time", "");
                             jumpTo(LoginActivity.class);
                         }else {
-                            if(TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("Token"))){
+                            if(TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(mActivity).getString("Token"))){
                                 jumpTo(LoginActivity.class);
                             }else {
                                 jumpTo(MainActivity.class);
@@ -106,7 +102,7 @@ public class loadingActivity extends BaseLayoutActivity {
                         }
 
                     }else {
-                        SPUtils.getInstance(loadingActivity.this).put("time", t.getTime());
+                        com.andlei.utils.SPUtils.getInstance(loadingActivity.this).put("time", t.getTime());
                         jumpTo(LoginActivity.class);
                     }
                     finish();

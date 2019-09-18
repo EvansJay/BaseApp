@@ -1,6 +1,5 @@
 package ui.activity.store;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,55 +8,32 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.andlei.baseapp.R;
-import com.bigkoo.pickerview.builder.TimePickerBuilder;
-import com.bigkoo.pickerview.listener.CustomListener;
-import com.bigkoo.pickerview.listener.OnTimeSelectListener;
-import com.bigkoo.pickerview.view.TimePickerView;
 import com.yanzhenjie.recyclerview.swipe.SwipeItemClickListener;
-import com.yanzhenjie.recyclerview.swipe.SwipeMenuBridge;
-import com.yanzhenjie.recyclerview.swipe.SwipeMenuItemClickListener;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 import com.yanzhenjie.recyclerview.swipe.touch.OnItemMoveListener;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import adapter.GoodsSortRightAdapter;
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
-import bean.DouBanBean;
-import bean.GoodsRightEntity;
 import bean.SchoolBean;
 import bean.SortPlanBean;
-import bean.SortTypeBean;
 import bean.StoreBean;
 import netWork.NetUtils;
-import ui.activity.rider.DistributionSettingActivity;
 import utils.GsonUtils;
-import utils.JumpToUtils;
-import utils.Logger;
-import utils.SPUtils;
 import widget.ClearEditText;
 import widget.HiDialog;
 
 /**
  * 店铺排序
  */
-public class SortActivity extends BaseLayoutActivity {
+public class SortActivity extends activity.BaseLayoutActivity {
     private SwipeMenuRecyclerView swipeMenuRecyclerView;
     private GoodsSortRightAdapter mGoodsRightAdapter;
     //    private Spinner spinner,spinner_fun;
@@ -207,7 +183,7 @@ public class SortActivity extends BaseLayoutActivity {
 
     @Override
     protected void onDestroy() {
-        SPUtils.getInstance(mActivity).put("School_id", School_id);
+        com.andlei.utils.SPUtils.getInstance(mActivity).put("School_id", School_id);
         super.onDestroy();
     }
 
@@ -261,7 +237,7 @@ public class SortActivity extends BaseLayoutActivity {
         map.put("school_id", id + "");
         map.put("status","0");
         map.put("type",type+"");
-        Logger.i("type--->",type+"");
+        com.andlei.utils.Logger.i("type--->",type+"");
         netUtils.post("changestoresort/get_store_list", map);
     }
 

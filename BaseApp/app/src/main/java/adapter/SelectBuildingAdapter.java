@@ -6,7 +6,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 import bean.SchoolDistributionBean;
-import utils.TxtUtils;
 import widget.LongClickButton;
 
 /**
@@ -33,7 +32,7 @@ public class SelectBuildingAdapter extends BaseQuickAdapter<SchoolDistributionBe
         img_jia.setLongClickRepeatListener(new LongClickButton.LongClickRepeatListener() {
            @Override
            public void repeatAction() {
-               item.b_money = "" + TxtUtils.setDoubleScale((Double.parseDouble(item.b_money) + 0.1), 1);
+               item.b_money = "" + com.andlei.utils.TxtUtils.setDoubleScale((Double.parseDouble(item.b_money) + 0.1), 1);
                helper.setText(R.id.tv_money,item.b_money);
                //notifyDataSetChanged();
            }
@@ -44,7 +43,7 @@ public class SelectBuildingAdapter extends BaseQuickAdapter<SchoolDistributionBe
                 if (Double.parseDouble(item.b_money) <= 0.1) {
                     return;
                 }
-                item.b_money = "" + TxtUtils.setDoubleScale((Double.parseDouble(item.b_money) - 0.1), 1);
+                item.b_money = "" + com.andlei.utils.TxtUtils.setDoubleScale((Double.parseDouble(item.b_money) - 0.1), 1);
                 helper.setText(R.id.tv_money,item.b_money);
             }
         });

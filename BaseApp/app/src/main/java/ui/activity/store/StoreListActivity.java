@@ -6,14 +6,14 @@ import android.widget.RelativeLayout;
 
 import com.andlei.baseapp.R;
 
-import base.activity.BaseLayoutActivity;
+
 
 /**
  * 店铺列表
  * @author Andlei
  * @date 2019/9/11.
  */
-public class StoreListActivity extends BaseLayoutActivity {
+public class StoreListActivity extends activity.BaseLayoutActivity {
     private RelativeLayout layout_onoff,layout_goods_set;
 
     @Override

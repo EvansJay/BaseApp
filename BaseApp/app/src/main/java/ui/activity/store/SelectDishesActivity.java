@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import adapter.GoodsOnOffListAdapter;
-import base.activity.BaseLayoutActivity;
+
 import bean.StoreBean;
 import widget.ClearEditText;
 
@@ -26,7 +26,7 @@ import widget.ClearEditText;
  * @author Andlei
  * @date 2019/9/10.
  */
-public class SelectDishesActivity extends BaseLayoutActivity {
+public class SelectDishesActivity extends activity.BaseLayoutActivity {
     private ClearEditText edittext_search_shopname;
     private RecyclerView recy_list_dishes;
     private GoodsOnOffListAdapter adapter;

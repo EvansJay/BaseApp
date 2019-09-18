@@ -19,9 +19,7 @@ import com.andlei.baseapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import utils.Const;
-import utils.Logger;
-import utils.TxtUtils;
+
 
 /**
  * RecyclerView适配器
@@ -117,7 +115,7 @@ class BswFilterRecyclerAdapter<T> extends RecyclerView.Adapter implements Filter
 
     @Override
     public int getItemViewType(int position) {
-        if (showFooter && position == Const.judgeListNull(mData)) {
+        if (showFooter && position == com.andlei.utils.Const.judgeListNull(mData)) {
             return FOOTER_TYPE;
         } else {
             return super.getItemViewType(position);
@@ -136,7 +134,7 @@ class BswFilterRecyclerAdapter<T> extends RecyclerView.Adapter implements Filter
     public void setData(List<T> mData) {
         this.mData = mData;
         showData = mData;
-        getFilter().filter(TxtUtils.getText(mFilterEt));
+        getFilter().filter(com.andlei.utils.TxtUtils.getText(mFilterEt));
     }
 
     /**
@@ -177,7 +175,7 @@ class BswFilterRecyclerAdapter<T> extends RecyclerView.Adapter implements Filter
                     ((Activity) context).runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            getFilter().filter(TxtUtils.getText(mFilterEt));
+                            getFilter().filter(com.andlei.utils.TxtUtils.getText(mFilterEt));
                         }
                     });
                 }
@@ -191,7 +189,7 @@ class BswFilterRecyclerAdapter<T> extends RecyclerView.Adapter implements Filter
      * @param mData 替换的数据
      */
     void replaceData(List<T> mData, int pageNumber, int pageSize) {
-        int dataSize = Const.judgeListNull(mData);
+        int dataSize = com.andlei.utils.Const.judgeListNull(mData);
         int startPosition = pageSize * (pageNumber - 1);
         for (int i = startPosition; i < startPosition + dataSize; i++) {
             this.mData.remove(i);
@@ -214,7 +212,7 @@ class BswFilterRecyclerAdapter<T> extends RecyclerView.Adapter implements Filter
                 }
             }
         }).start();
-        getFilter().filter(TxtUtils.getText(mFilterEt));
+        getFilter().filter(com.andlei.utils.TxtUtils.getText(mFilterEt));
     }
 
     /**
@@ -226,7 +224,7 @@ class BswFilterRecyclerAdapter<T> extends RecyclerView.Adapter implements Filter
         this.mData.clear();
         showData = mData;
         if (isNotify) {
-            getFilter().filter(TxtUtils.getText(mFilterEt));
+            getFilter().filter(com.andlei.utils.TxtUtils.getText(mFilterEt));
         }
     }
 
@@ -253,7 +251,7 @@ class BswFilterRecyclerAdapter<T> extends RecyclerView.Adapter implements Filter
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (position >= Const.judgeListNull(showData)) {
+        if (position >= com.andlei.utils.Const.judgeListNull(showData)) {
             return;
         }
         T t = showData.get(position);
@@ -262,7 +260,7 @@ class BswFilterRecyclerAdapter<T> extends RecyclerView.Adapter implements Filter
 
     @Override
     public int getItemCount() {
-        int mDataSize = Const.judgeListNull(showData);
+        int mDataSize = com.andlei.utils.Const.judgeListNull(showData);
         if (showFooter) {
             mDataSize++;
         }
@@ -291,12 +289,12 @@ class BswFilterRecyclerAdapter<T> extends RecyclerView.Adapter implements Filter
                     FilterResults results = new FilterResults();
                     List<T> filteredArray = filterConvertViewCallBack.filter(mData, constraint);
 
-                    if (Const.isEmpty(filteredArray)) {
+                    if (com.andlei.utils.Const.isEmpty(filteredArray)) {
                         filteredArray = mData;
                     }
                     results.count = filteredArray.size();
                     results.values = filteredArray;
-                    Logger.e("VALUES", results.values.toString());
+                    com.andlei.utils.Logger.e("VALUES", results.values.toString());
                     return results;
                 }
             };

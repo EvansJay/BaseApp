@@ -21,13 +21,14 @@ import java.util.List;
 import java.util.Map;
 
 import adapter.ShopItemAdapter;
+
+
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import bean.SchoolBean;
 import bean.StoreBean;
 import netWork.NetUtils;
 import utils.GsonUtils;
-import utils.SPUtils;
+
 import widget.ClearEditText;
 import widget.MaxHeightRecyclerView;
 
@@ -36,7 +37,7 @@ import widget.MaxHeightRecyclerView;
  * @author Andlei
  * @date 2019/9/10.
  */
-public class BrandsActivity extends BaseLayoutActivity {
+public class BrandsActivity extends activity.BaseLayoutActivity {
     private Spinner spinner;
     private ClearEditText ed_shopname_,ed_shopname_1,ed_shopname_2;
     private Button btn_bianji_,btn_clean_;
@@ -208,7 +209,7 @@ public class BrandsActivity extends BaseLayoutActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 School_id = schoolBeanList.get(i).getId();
                 loadData();
-                SPUtils.getInstance(mActivity).put("School_id", School_id);
+                com.andlei.utils.SPUtils.getInstance(mActivity).put("School_id", School_id);
             }
 
             @Override
@@ -286,9 +287,9 @@ public class BrandsActivity extends BaseLayoutActivity {
                     }
                     ArrayAdapter madapter = new ArrayAdapter(mActivity, R.layout.item, R.id.tv_mytext, strings);
                     spinner.setAdapter(madapter);
-                    if (!TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("School_id"))) {
+                    if (!TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id"))) {
                         for (int i = 0; i < schoolBeanList.size(); i++) {
-                            if (SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
+                            if (com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
                                 spinner.setSelection(i);
                                 School_id = schoolBeanList.get(i).getId();
 

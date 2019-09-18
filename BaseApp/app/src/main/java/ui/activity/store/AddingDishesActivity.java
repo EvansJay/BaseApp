@@ -21,13 +21,13 @@ import java.util.Map;
 
 import adapter.GoodsItemAdapter;
 import adapter.ShopItemAdapter;
+
+
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
-import bean.SchoolBean;
 import bean.StoreBean;
 import netWork.NetUtils;
 import utils.GsonUtils;
-import utils.SPUtils;
+
 import widget.ClearEditText;
 import widget.HiDialog;
 
@@ -37,7 +37,7 @@ import widget.HiDialog;
  * @author Andlei
  * @date 2019/9/9.
  */
-public class AddingDishesActivity extends BaseLayoutActivity {
+public class AddingDishesActivity extends activity.BaseLayoutActivity {
     private TextView tv_shopname;
     private ClearEditText edittext_search_shopname, edittext_search_dishes;
     private RecyclerView recy_list, recy_list_goods;

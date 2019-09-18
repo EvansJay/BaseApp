@@ -5,10 +5,14 @@ import android.content.SharedPreferences;
 import android.os.Environment;
 import android.support.multidex.MultiDex;
 
-import com.tencent.bugly.Bugly;
-import com.tencent.bugly.crashreport.CrashReport;
+//import com.tencent.bugly.Bugly;
+//import com.tencent.bugly.crashreport.CrashReport;
+
+
+import com.andlei.baseapp.BuildConfig;
 
 import crash.CrashHandler;
+import utils.BaseAppUtils;
 
 /**
  *
@@ -28,8 +32,10 @@ public class App extends Application {
         // 注册crashHandler
         crashHandler.init(getApplicationContext());
 
+        BaseAppUtils.init(app, BuildConfig.BASE_URL);
+
         //注册bugly
-        Bugly.init(getApplicationContext(), "14e0d57f7f", false);
+      //  Bugly.init(getApplicationContext(), "14e0d57f7f", false);
         //CrashReport.initCrashReport(getApplicationContext(), "14e0d57f7f", false);
 
         MultiDex.install(this);

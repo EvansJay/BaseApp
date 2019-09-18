@@ -22,7 +22,7 @@ import adapter.GoodsLeftAdapter;
 import adapter.GoodsNewSortRightAdapter;
 import adapter.GoodsSortRightAdapter;
 import adapter.OnRecyclerViewListener;
-import base.activity.BaseLayoutActivity;
+
 import bean.CategoryEntity;
 import bean.GoodsRightEntity;
 import bean.StoreBean;
@@ -33,7 +33,7 @@ import bean.StoreBean;
  * Created by soubike on 2018/7/12.
  */
 
-public class GoodsSortActivity extends BaseLayoutActivity {
+public class GoodsSortActivity extends activity.BaseLayoutActivity {
 
 //    private ActivityGoodsSortBinding mBinding;
     private RecyclerView recycler_view_left;

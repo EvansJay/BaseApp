@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import base.BaseBean;
 
+
 /**
  * Created by soubike on 2018/8/3.
  */

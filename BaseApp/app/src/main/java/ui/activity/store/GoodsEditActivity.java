@@ -1,7 +1,6 @@
 package ui.activity.store;
 
 import android.os.Bundle;
-
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -10,20 +9,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.andlei.baseapp.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import adapter.ClassifyManagerAdapter;
 import adapter.GoodsLeftAdapter;
 import adapter.GoodsRightAdapter;
-import base.activity.BaseLayoutActivity;
 import bean.CategoryEntity;
 import bean.GoodsRightEntity;
-import ui.activity.goods.AddOrEditClassifyActivity;
 import ui.activity.goods.ClassifyManagerActivity;
 import ui.activity.goods.GoodsSortActivity;
 import widget.ClearEditText;
@@ -35,7 +28,7 @@ import widget.GoodsScreenPopupWindow;
  * Created by soubike on 2018/7/12.
  */
 
-public class GoodsEditActivity extends BaseLayoutActivity {
+public class GoodsEditActivity extends activity.BaseLayoutActivity {
 
 
     private ClearEditText edittext_search;

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 import adapter.MostSpecAdapter;
 import adapter.OnRecyclerViewListener;
-import base.activity.BaseLayoutActivity;
 import bean.GoodsDetailsEntity;
 import utils.TextUtils;
 import widget.ScrollSpeedLinearLayoutManger;
@@ -21,7 +20,7 @@ import widget.ScrollSpeedLinearLayoutManger;
  * @author Andlei
  * @date 2019/9/16.
  */
-public class MostSpecActivity extends BaseLayoutActivity {
+public class MostSpecActivity extends activity.BaseLayoutActivity {
     private RecyclerView recycler_view;
     private ArrayList<GoodsDetailsEntity.GoodsDetailBean.SpenBean> spenBeanList = new ArrayList<>();
     private TextView tv_add;
@@ -74,7 +73,7 @@ public class MostSpecActivity extends BaseLayoutActivity {
         switch (view.getId()){
             case R.id.tv_add:
                 if (spenBeanList.size() >= 6) {
-                    TextUtils.makeText("最多可以添加6个规格");
+                   TextUtils.makeText("最多可以添加6个规格");
                     return;
                 }
                 spenBeanList.add(new GoodsDetailsEntity.GoodsDetailBean.SpenBean());

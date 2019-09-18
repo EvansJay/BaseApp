@@ -28,13 +28,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import adapter.TrimStoreAdapter;
+
+
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import bean.SchoolBean;
 import bean.StoreBean;
 import netWork.NetUtils;
 import utils.GsonUtils;
-import utils.SPUtils;
+
 import widget.ClearEditText;
 import widget.ShopTrimPopupWindow;
 
@@ -43,7 +44,7 @@ import widget.ShopTrimPopupWindow;
  * @author Andlei
  * @date 2019/6/24.
  */
-public class TrimStoreActivity extends BaseLayoutActivity {
+public class TrimStoreActivity extends activity.BaseLayoutActivity {
     private Spinner spinner;
     private SwipeRefreshLayout refreshLayout;
     private RecyclerView recyclerView;
@@ -97,7 +98,7 @@ public class TrimStoreActivity extends BaseLayoutActivity {
                 tv_numstore.setText("已选择0家店");
                 listid.clear();
                 listid_all.clear();
-                SPUtils.getInstance(mActivity).put("School_id",School_id);
+                com.andlei.utils.SPUtils.getInstance(mActivity).put("School_id",School_id);
             }
 
             @Override
@@ -325,9 +326,9 @@ public class TrimStoreActivity extends BaseLayoutActivity {
                     }
                     ArrayAdapter adapter =  new ArrayAdapter(mActivity,R.layout.item,R.id.tv_mytext,strings);
                     spinner.setAdapter(adapter);
-                    if(!TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("School_id"))){
+                    if(!TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id"))){
                         for(int i=0; i<schoolBeanList.size();i++){
-                            if(SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())){
+                            if(com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())){
                                 spinner.setSelection(i);
                                 School_id = schoolBeanList.get(i).getId();
                                 loadData(School_id);

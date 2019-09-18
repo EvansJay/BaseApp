@@ -5,14 +5,14 @@ import android.view.View;
 
 import com.andlei.baseapp.R;
 
-import base.activity.BaseLayoutActivity;
+
 
 /**
  * 订单列表
  * @author Andlei
  * @date 2019/7/2.
  */
-public class OrderListActivity extends BaseLayoutActivity {
+public class OrderListActivity extends activity.BaseLayoutActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,6 +1,5 @@
 package bean;
 
-import com.google.gson.annotations.SerializedName;
 
 import base.BaseBean;
 

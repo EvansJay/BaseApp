@@ -2,7 +2,6 @@ package ui.activity.store;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -21,13 +20,14 @@ import java.util.List;
 import java.util.Map;
 
 import adapter.ShopItemAdapter;
+
+
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import bean.SchoolBean;
 import bean.StoreBean;
 import netWork.NetUtils;
 import utils.GsonUtils;
-import utils.SPUtils;
+
 import widget.ClearEditText;
 import widget.MaxHeightRecyclerView;
 
@@ -36,7 +36,7 @@ import widget.MaxHeightRecyclerView;
  * @author Andlei
  * @date 2019/9/11.
  */
-public class GoodsManagerActivity extends BaseLayoutActivity {
+public class GoodsManagerActivity extends activity.BaseLayoutActivity {
     private Spinner spinner;
     private ClearEditText ed_shopname;
     private MaxHeightRecyclerView recy_list_;
@@ -113,7 +113,7 @@ public class GoodsManagerActivity extends BaseLayoutActivity {
                 ed_shopname.setText("");
                 Store_id = "";
                 loadData();
-                SPUtils.getInstance(mActivity).put("School_id", School_id);
+                com.andlei.utils.SPUtils.getInstance(mActivity).put("School_id", School_id);
             }
 
             @Override
@@ -176,9 +176,9 @@ public class GoodsManagerActivity extends BaseLayoutActivity {
                     }
                     ArrayAdapter madapter = new ArrayAdapter(mActivity, R.layout.item, R.id.tv_mytext, strings);
                     spinner.setAdapter(madapter);
-                    if (!TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("School_id"))) {
+                    if (!TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id"))) {
                         for (int i = 0; i < schoolBeanList.size(); i++) {
-                            if (SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
+                            if (com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
                                 spinner.setSelection(i);
                                 School_id = schoolBeanList.get(i).getId();
 

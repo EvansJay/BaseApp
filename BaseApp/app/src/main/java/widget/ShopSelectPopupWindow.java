@@ -13,16 +13,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.TextView;
-
 import com.andlei.baseapp.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-
 import java.util.List;
-
 import adapter.StoreOnOffListAdapter;
 import bean.StoreBean;
-import utils.DensityUtil;
 
 /**
  * 选中列表弹窗

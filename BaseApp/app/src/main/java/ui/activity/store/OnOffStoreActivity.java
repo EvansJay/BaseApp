@@ -23,24 +23,17 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import adapter.StoreOnOffListAdapter;
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import bean.SchoolBean;
 import bean.StoreBean;
 import netWork.NetUtils;
-import utils.DensityUtil;
 import utils.GsonUtils;
-import utils.SPUtils;
 import widget.ClearEditText;
 import widget.HiDialog;
 import widget.OnOffStoreTypePopupWindow;
-import widget.ShopSelectPopupWindow;
-
 
 /**
  * 开关店铺
@@ -48,7 +41,7 @@ import widget.ShopSelectPopupWindow;
  * @author Andlei
  * @date 2019/6/24.
  */
-public class OnOffStoreActivity extends BaseLayoutActivity {
+public class OnOffStoreActivity extends activity.BaseLayoutActivity {
     private Spinner spinner;
 //    private SwipeRefreshLayout refreshLayout;
     private RecyclerView recyclerView,recyclerView_isSelect;
@@ -129,7 +122,7 @@ public class OnOffStoreActivity extends BaseLayoutActivity {
                 list_store_select.clear();
                 storeOnOffListAdapter_select.notifyDataSetChanged();
                 updateText();
-                SPUtils.getInstance(mActivity).put("School_id", School_id);
+                com.andlei.utils.SPUtils.getInstance(mActivity).put("School_id", School_id);
             }
 
             @Override
@@ -354,7 +347,7 @@ public class OnOffStoreActivity extends BaseLayoutActivity {
                             pop.dismiss();
                         }
                     });
-                pop.showAtLocation(tv_store_type, Gravity.TOP | Gravity.CENTER_HORIZONTAL,0, DensityUtil.dip2px(OnOffStoreActivity.this,175));
+                pop.showAtLocation(tv_store_type, Gravity.TOP | Gravity.CENTER_HORIZONTAL,0, com.andlei.utils.DensityUtil.dip2px(OnOffStoreActivity.this,175));
                 break;
             case R.id.btn_close:
                 if (list_store_select.size() <= 0) {
@@ -423,9 +416,9 @@ public class OnOffStoreActivity extends BaseLayoutActivity {
                     }
                     ArrayAdapter adapter = new ArrayAdapter(mActivity, R.layout.item, R.id.tv_mytext, strings);
                     spinner.setAdapter(adapter);
-                    if (!TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("School_id"))) {
+                    if (!TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id"))) {
                         for (int i = 0; i < schoolBeanList.size(); i++) {
-                            if (SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
+                            if (com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
                                 spinner.setSelection(i);
                                 School_id = schoolBeanList.get(i).getId();
                                 loadData(School_id);

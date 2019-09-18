@@ -1,6 +1,5 @@
 package bean;
 
-import com.google.gson.annotations.SerializedName;
 
 import base.BaseBean;
 
@@ -17,13 +16,13 @@ public class SortTypeNewBean extends BaseBean {
      * 12 : {"enable":0,"time_period":{"7":{"is_operation":0,"start_time":0,"end_time":0},"8":{"is_operation":0,"start_time":0,"end_time":0},"9":{"is_operation":0,"start_time":0,"end_time":0},"10":{"is_operation":0,"start_time":0,"end_time":0}}}
      */
 
-    @SerializedName("1")
+
     private _$1Bean _$1;
-    @SerializedName("11")
+
     private _$11Bean _$11;
-    @SerializedName("6")
+
     private _$6Bean _$6;
-    @SerializedName("12")
+
     private _$12Bean _$12;
 
     public _$1Bean get_$1() {
@@ -107,13 +106,13 @@ public class SortTypeNewBean extends BaseBean {
              * 5 : {"is_operation":0,"start_time":0,"end_time":0}
              */
 
-            @SerializedName("2")
+
             private _$2Bean _$2;
-            @SerializedName("3")
+
             private _$3Bean _$3;
-            @SerializedName("4")
+
             private _$4Bean _$4;
-            @SerializedName("5")
+
             private _$5Bean _$5;
 
             public _$2Bean get_$2() {
@@ -343,13 +342,13 @@ public class SortTypeNewBean extends BaseBean {
              * 10 : {"is_operation":0,"start_time":0,"end_time":0}
              */
 
-            @SerializedName("7")
+
             private _$7Bean _$7;
-            @SerializedName("8")
+
             private _$8Bean _$8;
-            @SerializedName("9")
+
             private _$9Bean _$9;
-            @SerializedName("10")
+
             private _$10Bean _$10;
 
             public _$7Bean get_$7() {

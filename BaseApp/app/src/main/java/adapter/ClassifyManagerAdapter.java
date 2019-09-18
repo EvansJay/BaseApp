@@ -13,6 +13,7 @@ import java.util.List;
 
 import base.BaseBean;
 
+
 /**
  * @author Andlei
  * @date 2019/9/15.
@@ -20,7 +21,7 @@ import base.BaseBean;
 public class ClassifyManagerAdapter extends BaseQuickAdapter<BaseBean, BaseViewHolder> {
     private SwipeMenuRecyclerView swipeMenuRecyclerView;
 
-    public ClassifyManagerAdapter(int layoutResId, @Nullable List<BaseBean> data,SwipeMenuRecyclerView swipeMenuRecyclerView) {
+    public ClassifyManagerAdapter(int layoutResId, @Nullable List<BaseBean> data, SwipeMenuRecyclerView swipeMenuRecyclerView) {
         super(layoutResId, data);
         this.swipeMenuRecyclerView = swipeMenuRecyclerView;
     }

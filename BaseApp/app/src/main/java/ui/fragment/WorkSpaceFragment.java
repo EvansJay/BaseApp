@@ -8,10 +8,10 @@ import com.andlei.baseapp.R;
 
 import java.util.Map;
 
+
 import base.BaseBean;
 import base.fragment.BaseFragment;
 import netWork.NetUtils;
-import utils.Logger;
 
 /**
  * 工作台- fragement
@@ -99,7 +99,7 @@ public class WorkSpaceFragment extends BaseFragment {
     private NetUtils.NetRequestCallBack netRequestCallBack = new NetUtils.NetRequestCallBack() {
         @Override
         public void success(String action, BaseBean t, Map tag) {
-            Logger.e("dadadadad", action);
+            com.andlei.utils.Logger.e("dadadadad", action);
         }
 
         @Override

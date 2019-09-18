@@ -1,10 +1,7 @@
 package ui.activity.store;
-
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,19 +12,13 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.andlei.baseapp.R;
-import com.bumptech.glide.Glide;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import base.activity.BaseLayoutActivity;
 import bean.CategoryEntity;
 import bean.GoodsDetailsEntity;
 import bean.StoreBoxEntity;
@@ -44,7 +35,7 @@ import widget.HiDialog;
  * Created by soubike on 2018/7/28.
  */
 
-public class EditDetailActivity extends BaseLayoutActivity {
+public class EditDetailActivity extends activity.BaseLayoutActivity {
     private ImageView iv_pic;
     private EditText et_goods_name,et_goods_desc;
     private TextView tv_goods_clazz,tv_num_clean,tv_num_max;

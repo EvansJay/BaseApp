@@ -18,14 +18,14 @@ import java.util.List;
 
 import adapter.ClassifyManagerAdapter;
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
+
 
 /**
  * 商品-管理分类
  * @author Andlei
  * @date 2019/9/15.
  */
-public class ClassifyManagerActivity extends BaseLayoutActivity {
+public class ClassifyManagerActivity extends activity.BaseLayoutActivity {
     private SwipeMenuRecyclerView swipeMenuRecyclerView;
     private LinearLayout layout_add;
     private List<BaseBean> list = new ArrayList<>();

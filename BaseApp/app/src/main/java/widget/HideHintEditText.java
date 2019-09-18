@@ -8,8 +8,6 @@ import android.util.AttributeSet;
 import java.io.UnsupportedEncodingException;
 import java.util.regex.Pattern;
 
-import utils.Logger;
-
  /**
  * 《一个Android工程的从零开始》
  *
@@ -35,7 +33,7 @@ public class HideHintEditText extends AppCompatEditText {
     protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
         super.onTextChanged(text, start, lengthBefore, lengthAfter);
         CharSequence noEmojiString = emojiJudge(text);
-        Logger.i("onTextChanged", "text = " + text + " noEmojiString " + noEmojiString);
+        com.andlei.utils.Logger.i("onTextChanged", "text = " + text + " noEmojiString " + noEmojiString);
         // text是SpannableStringBuilder，不能直接判断
         if (!text.toString().equals(noEmojiString.toString())) {
             setText(noEmojiString);

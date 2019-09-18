@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="size_5">5dp</dimen>
     <dimen name="size_8">8dp</dimen>
     <dimen name="size_13">13dp</dimen>
@@ -38,6 +38,7 @@
     <dimen name="dp16">16dp</dimen>
     <dimen name="dp37">37dp</dimen>
     <dimen name="dp40">40dp</dimen>
+    <dimen name="dp_40" tools:ignore="MissingDefaultResource">40dp</dimen>
     <dimen name="dp25">25dp</dimen>
     <dimen name="dp30">30dp</dimen>
     <dimen name="dp07">0.7dp</dimen>

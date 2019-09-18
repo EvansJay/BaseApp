@@ -1,18 +1,12 @@
 package ui.activity.goods;
-
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
-
 import com.andlei.baseapp.R;
-
 import java.util.ArrayList;
-import java.util.List;
-
 import adapter.MostAttrAdapter;
-import base.activity.BaseLayoutActivity;
 import bean.GoodsDetailsEntity;
 import utils.TextUtils;
 
@@ -21,7 +15,7 @@ import utils.TextUtils;
  * @author Andlei
  * @date 2019/9/16.
  */
-public class AttributesActivity extends BaseLayoutActivity {
+public class AttributesActivity extends activity.BaseLayoutActivity {
     private RecyclerView recycler_view;
     private TextView tv_add;
     private MostAttrAdapter adapter;

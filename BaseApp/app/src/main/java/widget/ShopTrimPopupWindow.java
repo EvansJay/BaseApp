@@ -9,23 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-
 import com.andlei.baseapp.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-
 import java.util.List;
-
-import adapter.StoreOnOffListAdapter;
 import adapter.TrimStoreAdapter;
-import application.App;
-import bean.SchoolDistributionBean;
 import bean.StoreBean;
-import utils.DensityUtil;
 
 /**
  * 选中列表弹窗

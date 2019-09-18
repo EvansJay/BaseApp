@@ -11,6 +11,7 @@ import java.util.List;
 
 import base.BaseBean;
 
+
 /**
  * @author Andlei
  * @date 2019/9/16.

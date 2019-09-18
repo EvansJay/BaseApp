@@ -3,16 +3,11 @@ package ui.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
-
 import com.andlei.baseapp.R;
-
 import java.util.Map;
-
 import base.BaseBean;
 import base.fragment.BaseFragment;
 import netWork.NetUtils;
-import utils.Logger;
-
 /**
  * 商户-fragment
  *
@@ -100,7 +95,7 @@ public class StoreFragment extends BaseFragment {
     private NetUtils.NetRequestCallBack netRequestCallBack = new NetUtils.NetRequestCallBack() {
         @Override
         public void success(String action, BaseBean t, Map tag) {
-            Logger.e("dadadadad", action);
+            com.andlei.utils.Logger.e("dadadadad", action);
         }
 
         @Override

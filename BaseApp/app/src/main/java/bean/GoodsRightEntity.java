@@ -6,6 +6,7 @@ import java.util.List;
 
 import base.BaseBean;
 
+
 /**
  * Created by soubike on 2018/8/2.
  */

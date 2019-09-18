@@ -16,23 +16,18 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.andlei.baseapp.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import adapter.IntelligenceListAdapter;
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import bean.SchoolBean;
 import bean.StoreBean;
 import netWork.NetUtils;
 import utils.GsonUtils;
-import utils.SPUtils;
 import widget.ClearEditText;
 
 /**
@@ -40,7 +35,7 @@ import widget.ClearEditText;
  * @author Andlei
  * @date 2019/7/2.
  */
-public class IntelligenceListActivity extends BaseLayoutActivity {
+public class IntelligenceListActivity extends activity.BaseLayoutActivity {
     private Spinner spinner_school;
     private ClearEditText editText;
     private List<StoreBean> lists = new ArrayList<>();
@@ -219,9 +214,9 @@ public class IntelligenceListActivity extends BaseLayoutActivity {
                     }
                     ArrayAdapter adapter = new ArrayAdapter(mActivity, R.layout.item, R.id.tv_mytext, strings);
                     spinner_school.setAdapter(adapter);
-                    if (!TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("School_id"))) {
+                    if (!TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id"))) {
                         for (int i = 0; i < schoolBeanList.size(); i++) {
-                            if (SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
+                            if (com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
                                 spinner_school.setSelection(i);
                                 School_id = schoolBeanList.get(i).getId();
                                 loadData(School_id);

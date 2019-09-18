@@ -2,22 +2,14 @@ package ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
-
 import com.andlei.baseapp.R;
-
 import java.util.Map;
-
 import base.BaseBean;
 import base.fragment.BaseFragment;
 import netWork.NetUtils;
-import ui.MainActivity;
 import ui.activity.login.LoginActivity;
-import utils.APKVersionCodeUtils;
-import utils.Logger;
-import utils.SPUtils;
 import widget.HiDialog;
 
 /**
@@ -91,8 +83,8 @@ public class MineFragment extends BaseFragment {
     @Override
     protected void formatViews() {
         tv_logout.setOnClickListener(this);
-        tv_name.setText("用户名："+SPUtils.getInstance(mContext).getString("phone"));
-        tv_version.setText("版本V:"+ APKVersionCodeUtils.getVerName(mActivity));
+        tv_name.setText("用户名："+ com.andlei.utils.SPUtils.getInstance(mContext).getString("phone"));
+        tv_version.setText("版本V:"+ com.andlei.utils.APKVersionCodeUtils.getVerName(mActivity));
 //        textFragment.setText("找到了，而且赋值成功");
     }
 
@@ -118,7 +110,7 @@ public class MineFragment extends BaseFragment {
                             @Override
                             public void dialogRightBtnClick() {
                                 //退出登录
-                                SPUtils.getInstance(mActivity).put("Token","");
+                                com.andlei.utils.SPUtils.getInstance(mActivity).put("Token","");
                                 jumpTo(LoginActivity.class);
                                 mActivity.finish();
                             }
@@ -131,7 +123,7 @@ public class MineFragment extends BaseFragment {
     private NetUtils.NetRequestCallBack netRequestCallBack = new NetUtils.NetRequestCallBack() {
         @Override
         public void success(String action, BaseBean t, Map tag) {
-            Logger.e("dadadadad", action);
+            com.andlei.utils.Logger.e("dadadadad", action);
         }
 
         @Override

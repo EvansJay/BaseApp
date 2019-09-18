@@ -8,14 +8,14 @@ import android.widget.EditText;
 
 import com.andlei.baseapp.R;
 
-import base.activity.BaseLayoutActivity;
+
 
 /**
  * 新增，编辑分类
  * @author Andlei
  * @date 2019/9/15.
  */
-public class AddOrEditClassifyActivity extends BaseLayoutActivity {
+public class AddOrEditClassifyActivity extends activity.BaseLayoutActivity {
     private EditText et_goods_name;
     private Button btn_add,btn_delete;
     private String class_id;

@@ -1,5 +1,4 @@
 package bean;
-
 import base.BaseBean;
 
 /**

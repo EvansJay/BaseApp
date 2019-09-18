@@ -19,7 +19,6 @@ import application.App;
 import bean.GoodsDetailsEntity;
 import ui.activity.goods.MostSpecActivity;
 import ui.activity.login.LoginActivity;
-import utils.SPUtils;
 import widget.HiDialog;
 
 public class MostSpecAdapter extends RecyclerView.Adapter<MostSpecAdapter.ViewHolder>  {

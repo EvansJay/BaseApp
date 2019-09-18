@@ -24,8 +24,7 @@ import com.google.zxing.Result;
 import java.io.IOException;
 import java.util.Vector;
 
-import base.activity.BaseLayoutActivity;
-import utils.Logger;
+
 import zxing.MessageIDs;
 import zxing.camera.CameraManager;
 import zxing.decoding.CaptureActivityHandler;
@@ -42,7 +41,7 @@ import zxing.view.ViewfinderView;
  * Initial the camera
  * 扫描二维码界面
  */
-public class CaptureActivity extends BaseLayoutActivity implements Callback {
+public class CaptureActivity extends activity.BaseLayoutActivity implements Callback {
     public static final String QR_RESULT = "RESULT";
 
     private CaptureActivityHandler handler;
@@ -204,7 +203,7 @@ public class CaptureActivity extends BaseLayoutActivity implements Callback {
     @NonNull
     private void handlerScanResult(Result rawResult) {
         String resultString = rawResult.getText();
-        Logger.i("toast", "resultString = " + resultString);
+        com.andlei.utils.Logger.i("toast", "resultString = " + resultString);
         restartPreviewAfterDelay(0L);
     }
 

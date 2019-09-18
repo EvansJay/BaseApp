@@ -5,15 +5,12 @@ import android.text.TextUtils;
 import android.view.View;
 import com.andlei.baseapp.R;
 import com.andlei.baseapp.databinding.ActivityLoginBinding;
-
-
 import java.util.HashMap;
 import java.util.Map;
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import netWork.NetUtils;
 import ui.MainActivity;
-import utils.SPUtils;
+
 
 /**
  * 登录页面
@@ -21,7 +18,7 @@ import utils.SPUtils;
  * @author Andlei
  * @DATE 2019/1/17
  */
-public class LoginActivity extends BaseLayoutActivity {
+public class LoginActivity extends activity.BaseLayoutActivity {
     private ActivityLoginBinding mBinding;
     private NetUtils netUtils;
     private boolean isChecked;
@@ -59,8 +56,8 @@ public class LoginActivity extends BaseLayoutActivity {
 
     @Override
     protected void formatData() {
-        if(!TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("phone"))){
-            mBinding.etName.setText(SPUtils.getInstance(mActivity).getString("phone"));
+        if(!TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(mActivity).getString("phone"))){
+            mBinding.etName.setText(com.andlei.utils.SPUtils.getInstance(mActivity).getString("phone"));
         }
 //        if(!TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("pwd"))){
 //            mBinding.etPwd.setText(SPUtils.getInstance(mActivity).getString("pwd"));
@@ -141,9 +138,9 @@ public class LoginActivity extends BaseLayoutActivity {
 //                    break;
                 case "changestoresort/login":
                     if(baseBean.ok == 1){
-                        SPUtils.getInstance(mContext).put("Token",baseBean.token);
-                        SPUtils.getInstance(mContext).put("manager_id",baseBean.manager_id);
-                        SPUtils.getInstance(mContext).put("phone",mBinding.etName.getText().toString());
+                        com.andlei.utils.SPUtils.getInstance(mContext).put("Token",baseBean.token);
+                        com.andlei.utils.SPUtils.getInstance(mContext).put("manager_id",baseBean.manager_id);
+                        com.andlei.utils.SPUtils.getInstance(mContext).put("phone",mBinding.etName.getText().toString());
                        // SPUtils.getInstance(mContext).put("pwd",mBinding.etPwd.getText().toString());
                         jumpTo(MainActivity.class);
                         finish();

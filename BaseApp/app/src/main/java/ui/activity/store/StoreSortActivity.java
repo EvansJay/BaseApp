@@ -10,23 +10,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.andlei.baseapp.R;
-import com.google.gson.Gson;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import bean.SchoolBean;
 import bean.SortTypeBean;
-import bean.SortTypeNewBean;
 import netWork.NetUtils;
 import utils.GsonUtils;
-import utils.SPUtils;
+
 
 /**
  * 店铺排序
@@ -34,7 +28,7 @@ import utils.SPUtils;
  * @author Andlei
  * @date 2019/8/26.
  */
-public class StoreSortActivity extends BaseLayoutActivity {
+public class StoreSortActivity extends activity.BaseLayoutActivity {
     private Spinner spinner;
     private TextView tv_waimai, tv_ziqu;
     private ImageView img_moren, img_auto;
@@ -99,7 +93,7 @@ public class StoreSortActivity extends BaseLayoutActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 School_id = schoolBeanList.get(i).getId();
                 loadData();
-                SPUtils.getInstance(mActivity).put("School_id", School_id);
+                com.andlei.utils.SPUtils.getInstance(mActivity).put("School_id", School_id);
             }
 
             @Override
@@ -205,7 +199,7 @@ public class StoreSortActivity extends BaseLayoutActivity {
                     typeBeans.add(typeBean);
                     typeBeans.add(typeBean1);
                 }
-                map.put("sort_list", new Gson().toJson(typeBeans));
+                map.put("sort_list", GsonUtils.beanToJSONString(typeBeans));
                 netUtils.post("changestoresort/update_sort_config", map);
                 break;
         }
@@ -261,9 +255,9 @@ public class StoreSortActivity extends BaseLayoutActivity {
                     }
                     ArrayAdapter adapter = new ArrayAdapter(mActivity, R.layout.item, R.id.tv_mytext, strings);
                     spinner.setAdapter(adapter);
-                    if (!TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("School_id"))) {
+                    if (!TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id"))) {
                         for (int i = 0; i < schoolBeanList.size(); i++) {
-                            if (SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
+                            if (com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
                                 spinner.setSelection(i);
                                 School_id = schoolBeanList.get(i).getId();
                                 loadData();

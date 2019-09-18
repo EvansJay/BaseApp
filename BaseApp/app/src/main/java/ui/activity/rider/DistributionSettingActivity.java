@@ -19,23 +19,21 @@ import android.widget.TextView;
 
 import com.andlei.baseapp.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.google.gson.Gson;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import base.BaseBean;
-import base.activity.BaseLayoutActivity;
 import bean.SchoolBean;
 import bean.SchoolDistributionBean;
 import netWork.NetUtils;
 import ui.activity.store.OnOffStoreActivity;
 import utils.GsonUtils;
-import utils.KeyboardChangeListener;
-import utils.SPUtils;
-import utils.TxtUtils;
+
 import widget.HiDialog;
 import widget.SelectBuildingPopupWindow;
 
@@ -43,7 +41,7 @@ import widget.SelectBuildingPopupWindow;
  * @author Andlei
  * @date 2019/8/17.
  */
-public class DistributionSettingActivity extends BaseLayoutActivity {
+public class DistributionSettingActivity extends activity.BaseLayoutActivity {
     private EditText ced_inshcool_base,
             ced_inshcool_reward,
             ced_inshcool_allowance,
@@ -110,7 +108,7 @@ public class DistributionSettingActivity extends BaseLayoutActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 School_id = schoolBeanList.get(i).getId();
                 loadData();
-                SPUtils.getInstance(mActivity).put("School_id", School_id);
+                com.andlei.utils.SPUtils.getInstance(mActivity).put("School_id", School_id);
             }
 
             @Override
@@ -138,7 +136,7 @@ public class DistributionSettingActivity extends BaseLayoutActivity {
         map.put("out_reward", ced_outshcool_reward.getText().toString().trim());
         map.put("out_sub", ced_outshcool_allowance.getText().toString().trim());
         map.put("out_deadline", ced_outshcool_aging.getText().toString().trim());
-        map.put("buildingList", new Gson().toJson(BuildingList));
+        map.put("buildingList", GsonUtils.beanToJSONString(BuildingList));
         netUtils.post("changestoresort/set_distribution", map);
     }
 
@@ -183,14 +181,14 @@ public class DistributionSettingActivity extends BaseLayoutActivity {
                         public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                             switch (view.getId()) {
                                 case R.id.img_jia:
-                                    BuildingList.get(position).b_money = "" + TxtUtils.setDoubleScale((Double.parseDouble(BuildingList.get(position).b_money) + 0.1), 1);
+                                    BuildingList.get(position).b_money = "" + com.andlei.utils.TxtUtils.setDoubleScale((Double.parseDouble(BuildingList.get(position).b_money) + 0.1), 1);
                                     break;
                                 case R.id.img_jian:
                                     if (Double.parseDouble(BuildingList.get(position).b_money) <= 0.1) {
                                         toast("配送金额不能小于等于0元");
                                         return;
                                     }
-                                    BuildingList.get(position).b_money = "" + TxtUtils.setDoubleScale((Double.parseDouble(BuildingList.get(position).b_money) - 0.1), 1);
+                                    BuildingList.get(position).b_money = "" + com.andlei.utils.TxtUtils.setDoubleScale((Double.parseDouble(BuildingList.get(position).b_money) - 0.1), 1);
                                     break;
                             }
                             isUpdate = true;
@@ -248,9 +246,9 @@ public class DistributionSettingActivity extends BaseLayoutActivity {
                     }
                     ArrayAdapter adapter = new ArrayAdapter(mActivity, R.layout.item, R.id.tv_mytext, strings);
                     spinner.setAdapter(adapter);
-                    if (!TextUtils.isEmpty(SPUtils.getInstance(mActivity).getString("School_id"))) {
+                    if (!TextUtils.isEmpty(com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id"))) {
                         for (int i = 0; i < schoolBeanList.size(); i++) {
-                            if (SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
+                            if (com.andlei.utils.SPUtils.getInstance(mActivity).getString("School_id").equals(schoolBeanList.get(i).getId())) {
                                 spinner.setSelection(i);
                                 School_id = schoolBeanList.get(i).getId();
                                 loadData();
